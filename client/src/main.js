@@ -2,7 +2,7 @@ document.getElementById("loadWordBtn").addEventListener("click", getPosts);
 
 async function getPosts() {
   try {
-    const response = await fetch("http://localhost:8080/randomwords");
+    const response = await fetch("https://randomwordgenerator.onrender.com");
     const data = await response.json();
 
     if (!Array.isArray(data) || data.length === 0 || !Array.isArray(data[0])) {
