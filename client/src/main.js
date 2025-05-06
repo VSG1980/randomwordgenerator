@@ -2,13 +2,15 @@ document.getElementById("loadWordBtn").addEventListener("click", getPosts);
 
 async function getPosts() {
   try {
-    const response = await fetch("https://randomwordgenerator.onrender.com");
+    const response = await fetch(
+      "https://randomwordgenerator.onrender.com/randomwords"
+    );
     const data = await response.json();
-
-    if (!Array.isArray(data) || data.length === 0 || !Array.isArray(data[0])) {
-      console.error("Data is not in expected nested array format");
-      return;
-    }
+    console.log("this is data", data);
+    // if (!Array.isArray(data) || data.length === 0 || !Array.isArray(data[0])) {
+    //   console.error("Data is not in expected nested array format");
+    //   return;
+    // } This code is from a youtube video.
 
     const innerArray = data[0];
     const randomIndex = Math.floor(Math.random() * innerArray.length);
